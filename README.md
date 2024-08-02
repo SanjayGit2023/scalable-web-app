@@ -57,6 +57,27 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 - [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
 - [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
 
+
+## Diagram of the setup
+-      +--------------------+
+       |    Route 53        |
+       +--------------------+
+                |
+  +------------------------+
+  |  Load Balancer (ALB)   |
+  +------------------------+
+             /       \
+            /          \
+    +----------------+   +----------------+
+    |  EC2 Instance 1|   |  EC2 Instance 2|
+    +----------------+   +----------------+
+            (Auto Scaling Group)
+                   |
++-----------------------------------+
+|        VPC with Public Subnets    |
+|        (us-east-1a, us-east-1b)   |
++-----------------------------------+
+
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
